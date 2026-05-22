@@ -1,0 +1,13 @@
+{
+  "name": "SM Batch Genealogy Parent",
+  "module": "Batch Traceability",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "batch_no",    "fieldtype": "Link",  "options": "Batch",  "label": "Batch No",  "in_list_view": 1},
+    {"fieldname": "item_code",   "fieldtype": "Link",  "options": "Item",   "label": "Item",      "in_list_view": 1},
+    {"fieldname": "qty_used",    "fieldtype": "Float", "label": "Qty Used", "in_list_view": 1},
+    {"fieldname": "uom",         "fieldtype": "Link",  "options": "UOM",    "label": "UOM"},
+    {"fieldname": "supplier",    "fieldtype": "Link",  "options": "Supplier","label": "Supplier"}
+  ]
+}

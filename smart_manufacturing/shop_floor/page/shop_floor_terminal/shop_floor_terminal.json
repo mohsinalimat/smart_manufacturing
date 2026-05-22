@@ -1,0 +1,14 @@
+{
+  "doctype": "Page",
+  "name": "shop_floor-terminal",
+  "page_name": "shop_floor-terminal",
+  "title": "Shop Floor Terminal",
+  "module": "Shop Floor",
+  "standard": "Yes",
+  "roles": [
+    {"role": "SM Admin"},
+    {"role": "SM Production Manager"},
+    {"role": "SM Shop Floor Operator"},
+    {"role": "SM Quality Inspector"}
+  ]
+}

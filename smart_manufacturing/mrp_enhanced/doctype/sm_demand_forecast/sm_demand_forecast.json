@@ -1,0 +1,24 @@
+{
+  "name": "SM Demand Forecast",
+  "module": "MRP Enhanced",
+  "doctype": "DocType",
+  "autoname": "naming_series:",
+  "naming_series": "DF-.YYYY.-.MM.-",
+  "fields": [
+    {"fieldname": "company",          "fieldtype": "Link",    "options": "Company",  "label": "Company",       "reqd": 1},
+    {"fieldname": "forecast_method",  "fieldtype": "Select",  "label": "Forecast Method",
+      "options": "Moving Average\nExponential Smoothing\nSales Order Based\nManual", "reqd": 1},
+    {"fieldname": "col_break_1",      "fieldtype": "Column Break"},
+    {"fieldname": "from_date",        "fieldtype": "Date",    "label": "From Date",  "reqd": 1},
+    {"fieldname": "to_date",          "fieldtype": "Date",    "label": "To Date",    "reqd": 1},
+    {"fieldname": "period",           "fieldtype": "Select",  "label": "Period",
+      "options": "Weekly\nMonthly\nQuarterly", "default": "Monthly"},
+    {"fieldname": "section_items",    "fieldtype": "Section Break", "label": "Forecast Items"},
+    {"fieldname": "forecast_items",   "fieldtype": "Table",   "label": "Forecast Items","options": "SM Demand Forecast Item"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",   "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "SM Planner", "read": 1, "write": 1, "create": 1},
+    {"role": "SM Viewer",  "read": 1}
+  ]
+}

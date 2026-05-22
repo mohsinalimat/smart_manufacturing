@@ -1,0 +1,22 @@
+{
+  "name": "SM Equipment Utilization Log",
+  "module": "Maintenance Equipment",
+  "doctype": "DocType",
+  "autoname": "naming_series:",
+  "naming_series": "EUL-.YYYY.-.#####",
+  "fields": [
+    {"fieldname": "equipment",     "fieldtype": "Link",    "options": "SM Equipment","label": "Equipment","reqd": 1, "in_list_view": 1},
+    {"fieldname": "log_date",      "fieldtype": "Date",    "label": "Date",          "reqd": 1, "in_list_view": 1},
+    {"fieldname": "col_break_1",   "fieldtype": "Column Break"},
+    {"fieldname": "runtime_hrs",   "fieldtype": "Float",   "label": "Runtime (hrs)",  "in_list_view": 1},
+    {"fieldname": "idle_hrs",      "fieldtype": "Float",   "label": "Idle (hrs)"},
+    {"fieldname": "downtime_hrs",  "fieldtype": "Float",   "label": "Downtime (hrs)"},
+    {"fieldname": "utilization_pct","fieldtype": "Percent","label": "Utilization (%)", "read_only": 1},
+    {"fieldname": "work_order",    "fieldtype": "Link",    "options": "Work Order",  "label": "Work Order"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",                "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "SM Maintenance Engineer", "read": 1, "write": 1, "create": 1},
+    {"role": "SM Viewer",               "read": 1}
+  ]
+}

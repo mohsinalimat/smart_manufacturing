@@ -1,0 +1,27 @@
+{
+  "name": "SM Safety Stock Policy",
+  "module": "MRP Enhanced",
+  "doctype": "DocType",
+  "autoname": "field:item_code",
+  "title_field": "item_code",
+  "fields": [
+    {"fieldname": "item_code",        "fieldtype": "Link",    "options": "Item",     "label": "Item",      "reqd": 1, "in_list_view": 1},
+    {"fieldname": "warehouse",        "fieldtype": "Link",    "options": "Warehouse","label": "Warehouse",  "in_list_view": 1},
+    {"fieldname": "col_break_1",      "fieldtype": "Column Break"},
+    {"fieldname": "method",           "fieldtype": "Select",  "label": "Method",
+      "options": "Fixed Quantity\nDays of Supply\nService Level Based\nAutomatic (Statistical)"},
+    {"fieldname": "safety_stock_qty", "fieldtype": "Float",   "label": "Safety Stock Qty"},
+    {"fieldname": "days_of_supply",   "fieldtype": "Float",   "label": "Days of Supply"},
+    {"fieldname": "service_level_pct","fieldtype": "Percent", "label": "Service Level (%)","default": "95"},
+    {"fieldname": "col_break_2",      "fieldtype": "Column Break"},
+    {"fieldname": "reorder_point",    "fieldtype": "Float",   "label": "Reorder Point",    "read_only": 1},
+    {"fieldname": "avg_daily_demand", "fieldtype": "Float",   "label": "Avg Daily Demand", "read_only": 1},
+    {"fieldname": "lead_time_days",   "fieldtype": "Float",   "label": "Lead Time (days)"},
+    {"fieldname": "last_computed",    "fieldtype": "Datetime","label": "Last Computed",     "read_only": 1}
+  ],
+  "permissions": [
+    {"role": "SM Admin",   "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "SM Planner", "read": 1, "write": 1},
+    {"role": "SM Viewer",  "read": 1}
+  ]
+}

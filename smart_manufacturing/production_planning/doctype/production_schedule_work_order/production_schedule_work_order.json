@@ -1,0 +1,78 @@
+{
+  "name": "Production Schedule Work Order",
+  "module": "Production Planning",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "work_order",
+      "fieldtype": "Link",
+      "options": "Work Order",
+      "label": "Work Order",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Link",
+      "options": "Item",
+      "label": "Item",
+      "in_list_view": 1,
+      "read_only": 1,
+      "fetch_from": "work_order.production_item"
+    },
+    {
+      "fieldname": "qty",
+      "fieldtype": "Float",
+      "label": "Qty",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "workstation",
+      "fieldtype": "Link",
+      "options": "Workstation",
+      "label": "Workstation",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "shift",
+      "fieldtype": "Data",
+      "label": "Shift"
+    },
+    {
+      "fieldname": "planned_start",
+      "fieldtype": "Datetime",
+      "label": "Planned Start",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "planned_end",
+      "fieldtype": "Datetime",
+      "label": "Planned End"
+    },
+    {
+      "fieldname": "priority",
+      "fieldtype": "Int",
+      "label": "Priority",
+      "default": "5"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Pending\nScheduled\nIn Progress\nCompleted\nDelayed",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "machine_hours",
+      "fieldtype": "Float",
+      "label": "Machine Hours",
+      "read_only": 1
+    },
+    {
+      "fieldname": "dependency_on",
+      "fieldtype": "Link",
+      "options": "Work Order",
+      "label": "Depends On Work Order"
+    }
+  ]
+}

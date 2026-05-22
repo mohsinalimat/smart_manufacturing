@@ -1,0 +1,16 @@
+{
+  "name": "SM Demand Forecast Item",
+  "module": "MRP Enhanced",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "item_code",      "fieldtype": "Link",  "options": "Item", "label": "Item",          "in_list_view": 1},
+    {"fieldname": "item_name",      "fieldtype": "Data",  "label": "Item Name",    "read_only": 1,     "in_list_view": 1, "fetch_from": "item_code.item_name"},
+    {"fieldname": "uom",            "fieldtype": "Link",  "options": "UOM",  "label": "UOM",           "fetch_from": "item_code.stock_uom"},
+    {"fieldname": "forecast_qty",   "fieldtype": "Float", "label": "Forecast Qty", "in_list_view": 1},
+    {"fieldname": "current_stock",  "fieldtype": "Float", "label": "Stock On Hand","read_only": 1},
+    {"fieldname": "net_requirement","fieldtype": "Float", "label": "Net Req.",     "read_only": 1,      "in_list_view": 1},
+    {"fieldname": "safety_stock",   "fieldtype": "Float", "label": "Safety Stock"},
+    {"fieldname": "reorder_qty",    "fieldtype": "Float", "label": "Reorder Qty",  "read_only": 1}
+  ]
+}

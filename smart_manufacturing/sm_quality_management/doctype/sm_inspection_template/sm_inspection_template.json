@@ -1,0 +1,26 @@
+{
+  "name": "SM Inspection Template",
+  "module": "SM Quality Management",
+  "doctype": "DocType",
+  "autoname": "field:template_name",
+  "title_field": "template_name",
+  "fields": [
+    {"fieldname": "template_name",     "fieldtype": "Data",    "label": "Template Name","reqd": 1, "in_list_view": 1},
+    {"fieldname": "inspection_stage",  "fieldtype": "Select",  "label": "Stage",
+      "options": "Incoming\nIn Process\nFinal\nOutgoing", "in_list_view": 1},
+    {"fieldname": "col_break_1",       "fieldtype": "Column Break"},
+    {"fieldname": "applicable_item_group","fieldtype": "Link", "options": "Item Group","label": "Item Group"},
+    {"fieldname": "industry_type",     "fieldtype": "Select",  "label": "Industry Type",
+      "options": "\nTextile\nFood\nChemical\nPharmaceutical\nAutomotive\nFabrication\nPackaging\nGeneral"},
+    {"fieldname": "section_params",    "fieldtype": "Section Break","label": "Parameters"},
+    {"fieldname": "parameters",        "fieldtype": "Table",   "label": "Parameters",  "options": "SM Template Parameter"},
+    {"fieldname": "sampling_plan",     "fieldtype": "Select",  "label": "Sampling Plan",
+      "options": "100%\nAQL Level I\nAQL Level II\nAQL Level III\nCustom"},
+    {"fieldname": "accept_reject_ratio","fieldtype": "Percent","label": "Accept Ratio (%)","default": "90"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",             "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "SM Quality Inspector", "read": 1, "write": 1, "create": 1},
+    {"role": "SM Viewer",            "read": 1}
+  ]
+}

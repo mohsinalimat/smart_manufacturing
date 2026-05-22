@@ -1,0 +1,43 @@
+{
+  "name": "Workstation Schedule Detail",
+  "module": "Production Planning",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "shift",
+      "fieldtype": "Data",
+      "label": "Shift",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "available_hrs",
+      "fieldtype": "Float",
+      "label": "Available Hrs",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "planned_hrs",
+      "fieldtype": "Float",
+      "label": "Planned Hrs",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "work_order",
+      "fieldtype": "Link",
+      "options": "Work Order",
+      "label": "Work Order"
+    },
+    {
+      "fieldname": "is_holiday",
+      "fieldtype": "Check",
+      "label": "Holiday"
+    }
+  ]
+}

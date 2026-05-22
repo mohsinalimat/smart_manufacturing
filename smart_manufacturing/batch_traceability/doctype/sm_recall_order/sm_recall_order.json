@@ -1,0 +1,30 @@
+{
+  "name": "SM Recall Order",
+  "module": "Batch Traceability",
+  "doctype": "DocType",
+  "is_submittable": 1,
+  "autoname": "naming_series:",
+  "naming_series": "RCL-.YYYY.-.#####",
+  "fields": [
+    {"fieldname": "recall_title",   "fieldtype": "Data",    "label": "Recall Title",   "reqd": 1, "in_list_view": 1},
+    {"fieldname": "recall_type",    "fieldtype": "Select",  "label": "Recall Type",
+      "options": "Class I - Health Hazard\nClass II - May Cause Adverse Events\nClass III - Minor Violation",
+      "reqd": 1, "in_list_view": 1},
+    {"fieldname": "col_break_1",    "fieldtype": "Column Break"},
+    {"fieldname": "item_code",      "fieldtype": "Link",    "options": "Item",    "label": "Item",   "reqd": 1},
+    {"fieldname": "status",         "fieldtype": "Select",  "label": "Status",
+      "options": "Draft\nInitiated\nIn Progress\nCompleted\nClosed", "default": "Draft", "in_list_view": 1},
+    {"fieldname": "section_batches","fieldtype": "Section Break","label": "Affected Batches"},
+    {"fieldname": "affected_batches","fieldtype": "Table", "label": "Affected Batches","options": "SM Recall Batch"},
+    {"fieldname": "section_reason", "fieldtype": "Section Break","label": "Reason & Action"},
+    {"fieldname": "reason",         "fieldtype": "Text Editor","label": "Recall Reason","reqd": 1},
+    {"fieldname": "corrective_action","fieldtype": "Text Editor","label": "Corrective Action"},
+    {"fieldname": "regulatory_body","fieldtype": "Data",    "label": "Regulatory Body Notified"},
+    {"fieldname": "notification_date","fieldtype": "Date",  "label": "Notification Date"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",          "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1, "cancel": 1},
+    {"role": "SM Quality Inspector","read": 1, "write": 1, "create": 1, "submit": 1},
+    {"role": "SM Viewer",         "read": 1}
+  ]
+}

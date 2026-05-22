@@ -1,0 +1,13 @@
+{
+  "name": "SM Batch Movement",
+  "module": "Batch Traceability",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "posting_date","fieldtype": "Date",  "label": "Date",       "in_list_view": 1},
+    {"fieldname": "voucher_type","fieldtype": "Data",  "label": "Voucher Type","in_list_view": 1},
+    {"fieldname": "voucher_no",  "fieldtype": "Data",  "label": "Voucher No",  "in_list_view": 1},
+    {"fieldname": "warehouse",   "fieldtype": "Link",  "options": "Warehouse","label": "Warehouse",  "in_list_view": 1},
+    {"fieldname": "qty",         "fieldtype": "Float", "label": "Qty",         "in_list_view": 1}
+  ]
+}

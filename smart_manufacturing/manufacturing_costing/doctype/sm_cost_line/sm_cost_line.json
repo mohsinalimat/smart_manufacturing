@@ -1,0 +1,16 @@
+{
+  "name": "SM Cost Line",
+  "module": "Manufacturing Costing",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "cost_type",      "fieldtype": "Select", "label": "Cost Type",
+      "options": "Material\nLabor\nMachine\nOverhead\nUtility\nOther", "in_list_view": 1},
+    {"fieldname": "reference_type","fieldtype": "Data",   "label": "Reference Type"},
+    {"fieldname": "reference_name","fieldtype": "Dynamic Link","options": "reference_type","label": "Reference"},
+    {"fieldname": "description",   "fieldtype": "Data",   "label": "Description",     "in_list_view": 1},
+    {"fieldname": "qty",           "fieldtype": "Float",  "label": "Qty",             "in_list_view": 1},
+    {"fieldname": "rate",          "fieldtype": "Currency","label": "Rate",            "in_list_view": 1},
+    {"fieldname": "amount",        "fieldtype": "Currency","label": "Amount",          "in_list_view": 1, "read_only": 1}
+  ]
+}

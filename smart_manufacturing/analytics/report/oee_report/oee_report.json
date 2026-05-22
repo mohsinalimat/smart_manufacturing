@@ -1,0 +1,9 @@
+{
+  "name": "OEE Report",
+  "doctype": "Report",
+  "report_type": "Script Report",
+  "module": "Analytics",
+  "is_standard": "Yes",
+  "ref_doctype": "SM Shift Log",
+  "roles": [{"role": "SM Admin"},{"role": "SM Production Manager"},{"role": "SM Viewer"}]
+}

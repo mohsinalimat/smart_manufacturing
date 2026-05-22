@@ -1,0 +1,21 @@
+{
+  "name": "SM Overhead Template",
+  "module": "Manufacturing Costing",
+  "doctype": "DocType",
+  "autoname": "field:template_name",
+  "title_field": "template_name",
+  "fields": [
+    {"fieldname": "template_name",     "fieldtype": "Data",    "label": "Template Name",  "reqd": 1, "in_list_view": 1},
+    {"fieldname": "company",           "fieldtype": "Link",    "options": "Company",      "label": "Company"},
+    {"fieldname": "allocation_method", "fieldtype": "Select",  "label": "Allocation Method",
+      "options": "Machine Hours\nLabor Hours\nMaterial Cost\nFlat Rate\nCustom",
+      "default": "Machine Hours"},
+    {"fieldname": "section_items",     "fieldtype": "Section Break", "label": "Overhead Items"},
+    {"fieldname": "overhead_items",    "fieldtype": "Table",   "label": "Overhead Items", "options": "SM Overhead Item"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",          "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "SM Cost Accountant","read": 1, "write": 1, "create": 1},
+    {"role": "SM Viewer",         "read": 1}
+  ]
+}

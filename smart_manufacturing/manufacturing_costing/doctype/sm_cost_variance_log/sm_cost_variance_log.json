@@ -1,0 +1,22 @@
+{
+  "name": "SM Cost Variance Log",
+  "module": "Manufacturing Costing",
+  "doctype": "DocType",
+  "autoname": "naming_series:",
+  "naming_series": "CVL-.YYYY.-.#####",
+  "fields": [
+    {"fieldname": "cost_sheet",       "fieldtype": "Link",    "options": "SM Cost Sheet","label": "Cost Sheet","reqd": 1, "in_list_view": 1},
+    {"fieldname": "period",           "fieldtype": "Date",    "label": "Period",         "reqd": 1},
+    {"fieldname": "col_break_1",      "fieldtype": "Column Break"},
+    {"fieldname": "variance_type",    "fieldtype": "Select",  "label": "Variance Type",
+      "options": "Material\nLabor\nMachine\nOverhead\nTotal"},
+    {"fieldname": "variance_amount",  "fieldtype": "Currency","label": "Variance Amount"},
+    {"fieldname": "variance_pct",     "fieldtype": "Percent", "label": "Variance (%)"},
+    {"fieldname": "reason",           "fieldtype": "Small Text","label": "Reason"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",          "read": 1, "write": 1, "create": 1},
+    {"role": "SM Cost Accountant","read": 1, "write": 1},
+    {"role": "SM Viewer",         "read": 1}
+  ]
+}

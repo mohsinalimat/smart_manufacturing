@@ -1,0 +1,28 @@
+{
+  "name": "SM Batch Genealogy",
+  "module": "Batch Traceability",
+  "doctype": "DocType",
+  "autoname": "naming_series:",
+  "naming_series": "BG-.YYYY.-.#####",
+  "title_field": "batch_no",
+  "fields": [
+    {"fieldname": "batch_no",          "fieldtype": "Link",    "options": "Batch",  "label": "Batch No",      "reqd": 1, "in_list_view": 1},
+    {"fieldname": "item_code",         "fieldtype": "Link",    "options": "Item",   "label": "Item",          "in_list_view": 1, "read_only": 1, "fetch_from": "batch_no.item"},
+    {"fieldname": "col_break_1",       "fieldtype": "Column Break"},
+    {"fieldname": "work_order",        "fieldtype": "Link",    "options": "Work Order","label": "Work Order"},
+    {"fieldname": "manufacture_date",  "fieldtype": "Date",    "label": "Manufacture Date"},
+    {"fieldname": "expiry_date",       "fieldtype": "Date",    "label": "Expiry Date", "in_list_view": 1},
+    {"fieldname": "section_parents",   "fieldtype": "Section Break","label": "Parent Batches (Ingredients)"},
+    {"fieldname": "parent_batches",    "fieldtype": "Table",   "label": "Parent Batches","options": "SM Batch Genealogy Parent"},
+    {"fieldname": "section_children",  "fieldtype": "Section Break","label": "Child Batches (Outputs)"},
+    {"fieldname": "child_batches",     "fieldtype": "Table",   "label": "Child Batches","options": "SM Batch Genealogy Child"},
+    {"fieldname": "section_trace",     "fieldtype": "Section Break","label": "Stock Movements"},
+    {"fieldname": "stock_movements",   "fieldtype": "Table",   "label": "Stock Movements","options": "SM Batch Movement"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",          "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "SM Production Manager","read": 1, "write": 1},
+    {"role": "SM Quality Inspector","read": 1},
+    {"role": "SM Viewer",         "read": 1}
+  ]
+}

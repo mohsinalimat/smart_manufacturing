@@ -1,0 +1,31 @@
+{
+  "name": "SM Equipment Maintenance Schedule",
+  "module": "Maintenance Equipment",
+  "doctype": "DocType",
+  "is_submittable": 1,
+  "autoname": "naming_series:",
+  "naming_series": "EMS-.YYYY.-.#####",
+  "title_field": "equipment",
+  "fields": [
+    {"fieldname": "equipment",         "fieldtype": "Link",    "options": "SM Equipment","label": "Equipment","reqd": 1, "in_list_view": 1},
+    {"fieldname": "maintenance_type",  "fieldtype": "Select",  "label": "Type",
+      "options": "Preventive\nPredictive\nCondition Based\nCalibration\nInspection","reqd": 1, "in_list_view": 1},
+    {"fieldname": "col_break_1",       "fieldtype": "Column Break"},
+    {"fieldname": "frequency",         "fieldtype": "Select",  "label": "Frequency",
+      "options": "Daily\nWeekly\nMonthly\nQuarterly\nAnnual\nRuntime Hours"},
+    {"fieldname": "runtime_hours_trigger","fieldtype": "Float","label": "Trigger at Runtime Hours"},
+    {"fieldname": "next_due_date",     "fieldtype": "Date",    "label": "Next Due Date", "in_list_view": 1},
+    {"fieldname": "last_done_date",    "fieldtype": "Date",    "label": "Last Done Date","read_only": 1},
+    {"fieldname": "section_tasks",     "fieldtype": "Section Break","label": "Maintenance Tasks"},
+    {"fieldname": "tasks",             "fieldtype": "Table",   "label": "Tasks",         "options": "SM Maintenance Task"},
+    {"fieldname": "section_parts",     "fieldtype": "Section Break","label": "Required Spare Parts"},
+    {"fieldname": "spare_parts",       "fieldtype": "Table",   "label": "Spare Parts",   "options": "SM Maintenance Spare Part"},
+    {"fieldname": "assigned_to",       "fieldtype": "Link",    "options": "Employee",    "label": "Assigned To"},
+    {"fieldname": "estimated_hours",   "fieldtype": "Float",   "label": "Estimated Hours"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",                "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1, "cancel": 1},
+    {"role": "SM Maintenance Engineer", "read": 1, "write": 1, "create": 1, "submit": 1},
+    {"role": "SM Viewer",               "read": 1}
+  ]
+}

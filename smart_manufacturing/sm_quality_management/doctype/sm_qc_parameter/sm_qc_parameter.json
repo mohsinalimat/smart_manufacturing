@@ -1,0 +1,16 @@
+{
+  "name": "SM QC Parameter",
+  "module": "SM Quality Management",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "parameter",     "fieldtype": "Data",    "label": "Parameter",     "in_list_view": 1},
+    {"fieldname": "specification", "fieldtype": "Data",    "label": "Specification", "in_list_view": 1},
+    {"fieldname": "min_value",     "fieldtype": "Float",   "label": "Min",           "in_list_view": 1},
+    {"fieldname": "max_value",     "fieldtype": "Float",   "label": "Max",           "in_list_view": 1},
+    {"fieldname": "actual_value",  "fieldtype": "Float",   "label": "Actual",        "in_list_view": 1},
+    {"fieldname": "status",        "fieldtype": "Select",  "label": "Status",
+      "options": "\nPassed\nFailed", "in_list_view": 1},
+    {"fieldname": "remarks",       "fieldtype": "Small Text","label": "Remarks"}
+  ]
+}

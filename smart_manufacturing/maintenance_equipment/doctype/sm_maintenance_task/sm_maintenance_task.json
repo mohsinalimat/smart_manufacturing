@@ -1,0 +1,12 @@
+{
+  "name": "SM Maintenance Task",
+  "module": "Maintenance Equipment",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "task",         "fieldtype": "Data",    "label": "Task",       "in_list_view": 1},
+    {"fieldname": "description",  "fieldtype": "Small Text","label": "Description"},
+    {"fieldname": "duration_mins","fieldtype": "Float",   "label": "Duration (mins)"},
+    {"fieldname": "is_done",      "fieldtype": "Check",   "label": "Done",       "in_list_view": 1}
+  ]
+}

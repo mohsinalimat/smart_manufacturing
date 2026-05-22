@@ -1,0 +1,27 @@
+{
+  "name": "SM Material Substitution",
+  "module": "BOM Engineering",
+  "doctype": "DocType",
+  "autoname": "naming_series:",
+  "naming_series": "MS-.YYYY.-.#####",
+  "fields": [
+    {"fieldname": "original_item",   "fieldtype": "Link",    "options": "Item",  "label": "Original Item", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "substitute_item", "fieldtype": "Link",    "options": "Item",  "label": "Substitute",    "reqd": 1, "in_list_view": 1},
+    {"fieldname": "col_break_1",     "fieldtype": "Column Break"},
+    {"fieldname": "conversion_factor","fieldtype": "Float",  "label": "Conversion Factor","default": "1.0"},
+    {"fieldname": "valid_from",      "fieldtype": "Date",    "label": "Valid From"},
+    {"fieldname": "valid_to",        "fieldtype": "Date",    "label": "Valid To"},
+    {"fieldname": "approved_for",    "fieldtype": "Select",  "label": "Approved For",
+      "options": "All BOMs\nSpecific BOM"},
+    {"fieldname": "bom",             "fieldtype": "Link",    "options": "BOM",   "label": "BOM"},
+    {"fieldname": "reason",          "fieldtype": "Small Text","label": "Reason"},
+    {"fieldname": "status",          "fieldtype": "Select",  "label": "Status",
+      "options": "Temporary\nPermanent\nExpired", "in_list_view": 1, "default": "Temporary"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",              "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "SM Production Manager", "read": 1, "write": 1, "create": 1},
+    {"role": "SM Planner",            "read": 1, "write": 1},
+    {"role": "SM Viewer",             "read": 1}
+  ]
+}

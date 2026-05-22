@@ -1,0 +1,11 @@
+{
+  "name": "SM Equipment Spec",
+  "module": "Maintenance Equipment",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "specification", "fieldtype": "Data",  "label": "Specification", "in_list_view": 1},
+    {"fieldname": "value",         "fieldtype": "Data",  "label": "Value",         "in_list_view": 1},
+    {"fieldname": "unit",          "fieldtype": "Data",  "label": "Unit"}
+  ]
+}

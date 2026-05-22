@@ -1,0 +1,42 @@
+{
+  "name": "SM Inline QC",
+  "module": "SM Quality Management",
+  "doctype": "DocType",
+  "is_submittable": 1,
+  "autoname": "naming_series:",
+  "naming_series": "IQC-.YYYY.-.#####",
+  "title_field": "work_order",
+  "quick_entry": 0,
+  "fields": [
+    {"fieldname": "work_order",        "fieldtype": "Link",     "options": "Work Order",   "label": "Work Order",   "reqd": 1, "in_list_view": 1},
+    {"fieldname": "job_card",          "fieldtype": "Link",     "options": "Job Card",     "label": "Job Card"},
+    {"fieldname": "col_break_1",       "fieldtype": "Column Break"},
+    {"fieldname": "item_code",         "fieldtype": "Link",     "options": "Item",         "label": "Item",         "reqd": 1, "in_list_view": 1},
+    {"fieldname": "inspection_stage",  "fieldtype": "Select",   "label": "Inspection Stage",
+      "options": "Incoming\nIn Process\nFinal\nOutgoing\nRetail Sample", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "inspector",         "fieldtype": "Link",     "options": "Employee",     "label": "Inspector",    "in_list_view": 1},
+    {"fieldname": "inspection_date",   "fieldtype": "Date",     "label": "Inspection Date","reqd": 1},
+    {"fieldname": "col_break_2",       "fieldtype": "Column Break"},
+    {"fieldname": "lot_no",            "fieldtype": "Link",     "options": "Batch",        "label": "Lot / Batch"},
+    {"fieldname": "sample_size",       "fieldtype": "Float",    "label": "Sample Size"},
+    {"fieldname": "section_params",    "fieldtype": "Section Break", "label": "Inspection Parameters"},
+    {"fieldname": "inspection_template","fieldtype": "Link",    "options": "SM Inspection Template","label": "Template"},
+    {"fieldname": "parameters",        "fieldtype": "Table",    "label": "Parameters",     "options": "SM QC Parameter"},
+    {"fieldname": "section_result",    "fieldtype": "Section Break", "label": "Result"},
+    {"fieldname": "overall_status",    "fieldtype": "Select",   "label": "Overall Status",
+      "options": "\nPassed\nFailed\nConditional Pass", "in_list_view": 1},
+    {"fieldname": "col_break_3",       "fieldtype": "Column Break"},
+    {"fieldname": "defects_found",     "fieldtype": "Int",      "label": "Defects Found"},
+    {"fieldname": "reject_qty",        "fieldtype": "Float",    "label": "Reject Qty"},
+    {"fieldname": "remarks",           "fieldtype": "Text Editor","label": "Remarks"},
+    {"fieldname": "section_followup",  "fieldtype": "Section Break", "label": "Follow-Up"},
+    {"fieldname": "ncr",               "fieldtype": "Link",     "options": "SM NCR",       "label": "NCR",          "read_only": 1},
+    {"fieldname": "capa",              "fieldtype": "Link",     "options": "SM CAPA",      "label": "CAPA",         "read_only": 1}
+  ],
+  "permissions": [
+    {"role": "SM Admin",             "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1, "cancel": 1},
+    {"role": "SM Quality Inspector", "read": 1, "write": 1, "create": 1, "submit": 1},
+    {"role": "SM Production Manager","read": 1, "write": 1},
+    {"role": "SM Viewer",            "read": 1}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Cost Variance Report",
+  "doctype": "Report",
+  "report_type": "Script Report",
+  "module": "Analytics",
+  "is_standard": "Yes",
+  "ref_doctype": "SM Cost Sheet",
+  "roles": [{"role": "SM Admin"},{"role": "SM Cost Accountant"},{"role": "SM Production Manager"},{"role": "SM Viewer"}]
+}

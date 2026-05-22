@@ -1,0 +1,25 @@
+{
+  "name": "Production Forecast",
+  "module": "Production Planning",
+  "doctype": "DocType",
+  "autoname": "naming_series:",
+  "naming_series": "PF-.YYYY.-.MM.-",
+  "fields": [
+    {"fieldname": "company",           "fieldtype": "Link",   "options": "Company",  "label": "Company",       "reqd": 1},
+    {"fieldname": "fiscal_year",       "fieldtype": "Link",   "options": "Fiscal Year","label": "Fiscal Year", "reqd": 1},
+    {"fieldname": "col_break_1",       "fieldtype": "Column Break"},
+    {"fieldname": "from_date",         "fieldtype": "Date",   "label": "From Date",  "reqd": 1},
+    {"fieldname": "to_date",           "fieldtype": "Date",   "label": "To Date",    "reqd": 1},
+    {"fieldname": "forecast_method",   "fieldtype": "Select", "label": "Forecast Method",
+      "options": "Moving Average\nExponential Smoothing\nSales Order Based\nManual"},
+    {"fieldname": "section_items",     "fieldtype": "Section Break", "label": "Forecast Items"},
+    {"fieldname": "forecast_items",    "fieldtype": "Table",  "label": "Forecast Items",
+      "options": "Production Forecast Item"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",              "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "SM Production Manager", "read": 1, "write": 1, "create": 1},
+    {"role": "SM Planner",            "read": 1, "write": 1},
+    {"role": "SM Viewer",             "read": 1}
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "SM Bottleneck Log",
+  "module": "Production Planning",
+  "doctype": "DocType",
+  "autoname": "naming_series:",
+  "naming_series": "BTL-.YYYY.-.#####",
+  "quick_entry": 1,
+  "fields": [
+    {"fieldname": "workstation",       "fieldtype": "Link",    "options": "Workstation",  "label": "Workstation",     "reqd": 1, "in_list_view": 1},
+    {"fieldname": "production_schedule","fieldtype": "Link",   "options": "Production Schedule","label": "Schedule",  "in_list_view": 1},
+    {"fieldname": "col_break_1",       "fieldtype": "Column Break"},
+    {"fieldname": "detected_on",       "fieldtype": "Datetime","label": "Detected On",    "reqd": 1},
+    {"fieldname": "severity",          "fieldtype": "Select",  "label": "Severity",
+      "options": "Critical\nHigh\nMedium", "in_list_view": 1},
+    {"fieldname": "overload_hrs",      "fieldtype": "Float",   "label": "Overload (hrs)", "in_list_view": 1},
+    {"fieldname": "resolution",        "fieldtype": "Select",  "label": "Resolution",
+      "options": "Pending\nRescheduled\nCapacity Added\nDemand Reduced\nIgnored","default": "Pending", "in_list_view": 1},
+    {"fieldname": "remarks",           "fieldtype": "Small Text","label": "Remarks"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",              "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "SM Production Manager", "read": 1, "write": 1, "create": 1},
+    {"role": "SM Planner",            "read": 1, "write": 1},
+    {"role": "SM Viewer",             "read": 1}
+  ]
+}

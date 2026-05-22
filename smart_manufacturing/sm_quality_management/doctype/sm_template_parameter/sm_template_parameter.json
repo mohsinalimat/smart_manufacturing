@@ -1,0 +1,14 @@
+{
+  "name": "SM Template Parameter",
+  "module": "SM Quality Management",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "parameter",     "fieldtype": "Data",  "label": "Parameter",       "in_list_view": 1},
+    {"fieldname": "description",   "fieldtype": "Data",  "label": "Description"},
+    {"fieldname": "min_value",     "fieldtype": "Float", "label": "Min",             "in_list_view": 1},
+    {"fieldname": "max_value",     "fieldtype": "Float", "label": "Max",             "in_list_view": 1},
+    {"fieldname": "unit",          "fieldtype": "Link",  "options": "UOM",           "label": "Unit"},
+    {"fieldname": "is_mandatory",  "fieldtype": "Check", "label": "Mandatory",       "default": 1}
+  ]
+}

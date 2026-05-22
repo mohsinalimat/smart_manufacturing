@@ -1,0 +1,13 @@
+{
+  "name": "SM Supplier Work Order Material",
+  "module": "Subcontract Manufacturing",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "item_code",     "fieldtype": "Link",    "options": "Item",  "label": "Item",          "in_list_view": 1},
+    {"fieldname": "qty_issued",    "fieldtype": "Float",   "label": "Qty Issued","in_list_view": 1},
+    {"fieldname": "uom",           "fieldtype": "Link",    "options": "UOM",   "label": "UOM"},
+    {"fieldname": "qty_returned",  "fieldtype": "Float",   "label": "Qty Returned"},
+    {"fieldname": "stock_entry",   "fieldtype": "Link",    "options": "Stock Entry","label": "Stock Entry","read_only": 1}
+  ]
+}

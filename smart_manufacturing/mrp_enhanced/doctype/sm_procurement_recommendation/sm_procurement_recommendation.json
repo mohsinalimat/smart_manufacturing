@@ -1,0 +1,21 @@
+{
+  "name": "SM Procurement Recommendation",
+  "module": "MRP Enhanced",
+  "doctype": "DocType",
+  "is_submittable": 1,
+  "autoname": "naming_series:",
+  "naming_series": "PR-.YYYY.-.#####",
+  "fields": [
+    {"fieldname": "company",          "fieldtype": "Link",   "options": "Company",   "label": "Company",  "reqd": 1},
+    {"fieldname": "recommendation_date","fieldtype": "Date", "label": "Date",        "reqd": 1},
+    {"fieldname": "status",           "fieldtype": "Select", "label": "Status",
+      "options": "Draft\nApproved\nPO Created\nCancelled", "default": "Draft", "in_list_view": 1},
+    {"fieldname": "section_items",    "fieldtype": "Section Break","label": "Recommended Items"},
+    {"fieldname": "items",            "fieldtype": "Table",  "label": "Items",       "options": "SM Procurement Recommendation Item"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",   "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1, "cancel": 1},
+    {"role": "SM Planner", "read": 1, "write": 1, "create": 1},
+    {"role": "SM Viewer",  "read": 1}
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Shift Plan Detail",
+  "module": "Production Planning",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "workstation",
+      "fieldtype": "Link",
+      "options": "Workstation",
+      "label": "Workstation",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "shift",
+      "fieldtype": "Data",
+      "label": "Shift",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "operator",
+      "fieldtype": "Link",
+      "options": "Employee",
+      "label": "Operator",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "work_order",
+      "fieldtype": "Link",
+      "options": "Work Order",
+      "label": "Work Order"
+    },
+    {
+      "fieldname": "planned_qty",
+      "fieldtype": "Float",
+      "label": "Planned Qty"
+    }
+  ]
+}

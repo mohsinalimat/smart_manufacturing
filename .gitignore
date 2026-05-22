@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+.eggs/
+*.egg-link
+pip-wheel-metadata/
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Frappe specific
+*.lock
+node_modules/
+.cache/
+dist/
+*.min.js
+*.min.css
+
+# Secrets
+*.env
+.env.local
+site_config.json
+
+# Logs
+*.log
+logs/
+
+# Backup
+*.bak
+*.backup
+*.gz

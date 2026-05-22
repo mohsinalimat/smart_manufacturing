@@ -1,0 +1,13 @@
+{
+  "name": "SM Recall Batch",
+  "module": "Batch Traceability",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "batch_no",    "fieldtype": "Link",    "options": "Batch", "label": "Batch No",   "in_list_view": 1},
+    {"fieldname": "qty_affected","fieldtype": "Float",   "label": "Qty Affected","in_list_view": 1},
+    {"fieldname": "location",    "fieldtype": "Data",    "label": "Location"},
+    {"fieldname": "status",      "fieldtype": "Select",  "label": "Status",
+      "options": "Not Located\nLocated\nRetrieved\nDestroyed", "in_list_view": 1}
+  ]
+}

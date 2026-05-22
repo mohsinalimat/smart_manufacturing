@@ -1,0 +1,15 @@
+{
+  "name": "SM CAPA Action",
+  "module": "SM Quality Management",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "action",       "fieldtype": "Small Text","label": "Action",       "in_list_view": 1},
+    {"fieldname": "responsible",  "fieldtype": "Link",      "options": "Employee",  "label": "Responsible",  "in_list_view": 1},
+    {"fieldname": "target_date",  "fieldtype": "Date",      "label": "Target Date", "in_list_view": 1},
+    {"fieldname": "status",       "fieldtype": "Select",    "label": "Status",
+      "options": "Open\nIn Progress\nCompleted\nOverdue", "in_list_view": 1},
+    {"fieldname": "completion_date","fieldtype": "Date",    "label": "Completion Date"},
+    {"fieldname": "remarks",      "fieldtype": "Small Text","label": "Remarks"}
+  ]
+}

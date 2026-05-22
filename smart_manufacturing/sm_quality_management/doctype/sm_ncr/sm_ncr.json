@@ -1,0 +1,33 @@
+{
+  "name": "SM NCR",
+  "module": "SM Quality Management",
+  "doctype": "DocType",
+  "is_submittable": 1,
+  "autoname": "naming_series:",
+  "naming_series": "NCR-.YYYY.-.#####",
+  "title_field": "item_code",
+  "fields": [
+    {"fieldname": "item_code",        "fieldtype": "Link",    "options": "Item",    "label": "Item",         "reqd": 1, "in_list_view": 1},
+    {"fieldname": "work_order",       "fieldtype": "Link",    "options": "Work Order","label": "Work Order",  "in_list_view": 1},
+    {"fieldname": "col_break_1",      "fieldtype": "Column Break"},
+    {"fieldname": "ncr_date",         "fieldtype": "Date",    "label": "NCR Date",  "reqd": 1},
+    {"fieldname": "status",           "fieldtype": "Select",  "label": "Status",
+      "options": "Open\nUnder Review\nDisposition\nClosed", "default": "Open", "in_list_view": 1},
+    {"fieldname": "section_nc",       "fieldtype": "Section Break","label": "Non-Conformance Details"},
+    {"fieldname": "nc_type",          "fieldtype": "Select",  "label": "NC Type",
+      "options": "Dimensional\nVisual\nFunctional\nDocumentation\nOther"},
+    {"fieldname": "nc_qty",           "fieldtype": "Float",   "label": "NC Qty",    "in_list_view": 1},
+    {"fieldname": "col_break_2",      "fieldtype": "Column Break"},
+    {"fieldname": "nc_description",   "fieldtype": "Text Editor","label": "Description"},
+    {"fieldname": "section_disposition","fieldtype": "Section Break","label": "Disposition"},
+    {"fieldname": "disposition",      "fieldtype": "Select",  "label": "Disposition",
+      "options": "\nUse As Is\nRework\nScrap\nReturn to Supplier\nQuarantine"},
+    {"fieldname": "capa_reference",   "fieldtype": "Link",    "options": "SM CAPA", "label": "CAPA",         "read_only": 1}
+  ],
+  "permissions": [
+    {"role": "SM Admin",             "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1, "cancel": 1},
+    {"role": "SM Quality Inspector", "read": 1, "write": 1, "create": 1, "submit": 1},
+    {"role": "SM Production Manager","read": 1, "write": 1},
+    {"role": "SM Viewer",            "read": 1}
+  ]
+}

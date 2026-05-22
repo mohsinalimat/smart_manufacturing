@@ -1,0 +1,102 @@
+{
+  "name": "SM Operator Assignment",
+  "module": "Shop Floor",
+  "doctype": "DocType",
+  "autoname": "naming_series:",
+  "naming_series": "OA-.YYYY.-.#####",
+  "quick_entry": 1,
+  "fields": [
+    {
+      "fieldname": "operator",
+      "fieldtype": "Link",
+      "options": "Employee",
+      "label": "Operator",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "workstation",
+      "fieldtype": "Link",
+      "options": "Workstation",
+      "label": "Workstation",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "col_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "work_order",
+      "fieldtype": "Link",
+      "options": "Work Order",
+      "label": "Work Order",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "job_card",
+      "fieldtype": "Link",
+      "options": "Job Card",
+      "label": "Job Card"
+    },
+    {
+      "fieldname": "shift",
+      "fieldtype": "Data",
+      "label": "Shift",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "from_datetime",
+      "fieldtype": "Datetime",
+      "label": "From",
+      "reqd": 1
+    },
+    {
+      "fieldname": "col_break_2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "to_datetime",
+      "fieldtype": "Datetime",
+      "label": "To"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Assigned\nActive\nCompleted\nAbsent",
+      "default": "Assigned",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "skill_match",
+      "fieldtype": "Check",
+      "label": "Skill Match Verified"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "SM Admin",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "SM Production Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1
+    },
+    {
+      "role": "SM Planner",
+      "read": 1,
+      "write": 1,
+      "create": 1
+    },
+    {
+      "role": "SM Viewer",
+      "read": 1
+    }
+  ]
+}

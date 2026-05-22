@@ -1,0 +1,15 @@
+{
+  "name": "SM ECR Item Change",
+  "module": "BOM Engineering",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "change_type",   "fieldtype": "Select", "label": "Change",
+      "options": "Add\nRemove\nSubstitute\nQty Change", "in_list_view": 1},
+    {"fieldname": "old_item",      "fieldtype": "Link",   "options": "Item", "label": "Old Item",    "in_list_view": 1},
+    {"fieldname": "new_item",      "fieldtype": "Link",   "options": "Item", "label": "New Item",    "in_list_view": 1},
+    {"fieldname": "old_qty",       "fieldtype": "Float",  "label": "Old Qty"},
+    {"fieldname": "new_qty",       "fieldtype": "Float",  "label": "New Qty"},
+    {"fieldname": "reason",        "fieldtype": "Small Text","label": "Reason"}
+  ]
+}

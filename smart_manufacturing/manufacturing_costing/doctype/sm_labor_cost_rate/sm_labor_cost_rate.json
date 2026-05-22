@@ -1,0 +1,25 @@
+{
+  "name": "SM Labor Cost Rate",
+  "module": "Manufacturing Costing",
+  "doctype": "DocType",
+  "autoname": "naming_series:",
+  "naming_series": "LCR-.YYYY.-",
+  "fields": [
+    {"fieldname": "designation",       "fieldtype": "Link",    "options": "Designation","label": "Designation","reqd": 1, "in_list_view": 1},
+    {"fieldname": "company",           "fieldtype": "Link",    "options": "Company",   "label": "Company",    "reqd": 1},
+    {"fieldname": "col_break_1",       "fieldtype": "Column Break"},
+    {"fieldname": "effective_from",    "fieldtype": "Date",    "label": "Effective From","reqd": 1},
+    {"fieldname": "currency",          "fieldtype": "Link",    "options": "Currency",  "label": "Currency",   "reqd": 1, "default": "USD"},
+    {"fieldname": "section_rates",     "fieldtype": "Section Break","label": "Rates"},
+    {"fieldname": "basic_rate",        "fieldtype": "Currency","label": "Basic Rate/Hour",     "options": "currency"},
+    {"fieldname": "overtime_rate",     "fieldtype": "Currency","label": "Overtime Rate/Hour",  "options": "currency"},
+    {"fieldname": "col_break_2",       "fieldtype": "Column Break"},
+    {"fieldname": "benefits_rate",     "fieldtype": "Currency","label": "Benefits/Hour",       "options": "currency"},
+    {"fieldname": "total_rate",        "fieldtype": "Currency","label": "Total Labor Rate/Hour","options": "currency","read_only": 1}
+  ],
+  "permissions": [
+    {"role": "SM Admin",          "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "SM Cost Accountant","read": 1, "write": 1, "create": 1},
+    {"role": "SM Viewer",         "read": 1}
+  ]
+}

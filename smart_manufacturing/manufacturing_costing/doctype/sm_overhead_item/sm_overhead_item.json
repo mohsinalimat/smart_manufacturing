@@ -1,0 +1,13 @@
+{
+  "name": "SM Overhead Item",
+  "module": "Manufacturing Costing",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "description", "fieldtype": "Data",     "label": "Description","in_list_view": 1},
+    {"fieldname": "rate_type",   "fieldtype": "Select",   "label": "Rate Type",
+      "options": "Fixed/Month\nPer Machine Hour\nPer Labor Hour\nPercent of Material", "in_list_view": 1},
+    {"fieldname": "rate",        "fieldtype": "Currency", "label": "Rate",       "in_list_view": 1},
+    {"fieldname": "account",     "fieldtype": "Link",     "options": "Account",  "label": "GL Account"}
+  ]
+}

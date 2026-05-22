@@ -1,0 +1,2 @@
+# Smart Manufacturing — patches
+# smart_manufacturing.patches.v1_0.install_roles

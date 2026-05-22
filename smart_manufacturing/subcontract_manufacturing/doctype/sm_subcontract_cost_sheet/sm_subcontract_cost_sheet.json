@@ -1,0 +1,28 @@
+{
+  "name": "SM Subcontract Cost Sheet",
+  "module": "Subcontract Manufacturing",
+  "doctype": "DocType",
+  "is_submittable": 1,
+  "autoname": "naming_series:",
+  "naming_series": "SCS-.YYYY.-.#####",
+  "fields": [
+    {"fieldname": "supplier_work_order","fieldtype": "Link", "options": "SM Supplier Work Order","label": "Supplier WO","reqd": 1},
+    {"fieldname": "supplier",         "fieldtype": "Link",    "options": "Supplier",  "label": "Supplier","read_only": 1},
+    {"fieldname": "col_break_1",      "fieldtype": "Column Break"},
+    {"fieldname": "currency",         "fieldtype": "Link",    "options": "Currency",  "label": "Currency", "reqd": 1, "default": "USD"},
+    {"fieldname": "section_costs",    "fieldtype": "Section Break","label": "Cost Breakdown"},
+    {"fieldname": "raw_material_cost","fieldtype": "Currency","label": "Raw Material Cost","options": "currency"},
+    {"fieldname": "col_break_2",      "fieldtype": "Column Break"},
+    {"fieldname": "processing_cost",  "fieldtype": "Currency","label": "Processing Cost",   "options": "currency"},
+    {"fieldname": "freight_cost",     "fieldtype": "Currency","label": "Freight Cost",      "options": "currency"},
+    {"fieldname": "other_cost",       "fieldtype": "Currency","label": "Other Cost",        "options": "currency"},
+    {"fieldname": "total_cost",       "fieldtype": "Currency","label": "Total Cost",        "options": "currency","read_only": 1},
+    {"fieldname": "cost_per_unit",    "fieldtype": "Currency","label": "Cost Per Unit",     "options": "currency","read_only": 1}
+  ],
+  "permissions": [
+    {"role": "SM Admin",             "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1, "cancel": 1},
+    {"role": "SM Cost Accountant",   "read": 1, "write": 1, "create": 1},
+    {"role": "SM Subcontract Manager","read": 1, "write": 1},
+    {"role": "SM Viewer",            "read": 1}
+  ]
+}

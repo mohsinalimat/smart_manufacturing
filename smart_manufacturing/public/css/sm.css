@@ -1,0 +1,71 @@
+/* Smart Manufacturing Suite — Global Styles */
+
+:root {
+  --sm-primary: #2d6a4f;
+  --sm-secondary: #40916c;
+  --sm-accent: #52b788;
+  --sm-warning: #f4a261;
+  --sm-danger: #e76f51;
+  --sm-bg-light: #f0fdf4;
+}
+
+/* Shop Floor Terminal */
+.sm-jc-card {
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease;
+}
+.sm-jc-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* OEE Badge */
+.sm-oee-badge {
+  background: var(--sm-primary);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* Quality Alert severity */
+.sm-severity-Critical { color: var(--sm-danger); font-weight: 700; }
+.sm-severity-High     { color: var(--sm-warning); font-weight: 600; }
+.sm-severity-Medium   { color: #f4d03f; }
+.sm-severity-Low      { color: #aaa; }
+
+/* Downtime indicator */
+.sm-downtime-active {
+  background: #fff3cd;
+  border-left: 4px solid var(--sm-warning);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+/* Barcode scan input */
+.sm-barcode {
+  font-family: monospace;
+  letter-spacing: 0.08em;
+}
+
+/* Mobile-friendly terminal buttons */
+@media (max-width: 768px) {
+  .sm-jc-card .card-footer .btn {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  .sm-terminal-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+}
+
+/* Progress bars in job cards */
+.sm-jc-card .progress {
+  background: #e9ecef;
+}
+
+/* Shift log status indicator */
+.sm-shift-active::before {
+  content: "● ";
+  color: #28a745;
+}

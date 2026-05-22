@@ -1,0 +1,40 @@
+{
+  "name": "Production Schedule",
+  "module": "Production Planning",
+  "doctype": "DocType",
+  "is_submittable": 1,
+  "autoname": "naming_series:",
+  "naming_series": "PS-.YYYY.-.MM.-",
+  "title_field": "title",
+  "fields": [
+    {"fieldname": "title",            "fieldtype": "Data",     "label": "Title",                "reqd": 1, "in_list_view": 1},
+    {"fieldname": "company",          "fieldtype": "Link",     "options": "Company",            "label": "Company", "reqd": 1},
+    {"fieldname": "col_break_1",      "fieldtype": "Column Break"},
+    {"fieldname": "planned_start_date","fieldtype": "Date",    "label": "Planned Start Date",   "reqd": 1, "in_list_view": 1},
+    {"fieldname": "planned_end_date", "fieldtype": "Date",     "label": "Planned End Date",     "reqd": 1},
+    {"fieldname": "section_basic",    "fieldtype": "Section Break", "label": "Planning Details"},
+    {"fieldname": "planning_horizon", "fieldtype": "Int",      "label": "Planning Horizon (Days)", "default": "30"},
+    {"fieldname": "schedule_type",    "fieldtype": "Select",   "label": "Schedule Type",
+      "options": "Finite Capacity\nInfinite Capacity\nMachine-wise\nShift-wise", "reqd": 1},
+    {"fieldname": "col_break_2",      "fieldtype": "Column Break"},
+    {"fieldname": "status",           "fieldtype": "Select",   "label": "Status",
+      "options": "Draft\nIn Review\nApproved\nIn Progress\nCompleted\nCancelled", "default": "Draft", "in_list_view": 1},
+    {"fieldname": "approved_by",      "fieldtype": "Link",     "options": "User", "label": "Approved By", "read_only": 1},
+    {"fieldname": "section_items",    "fieldtype": "Section Break", "label": "Scheduled Work Orders"},
+    {"fieldname": "work_orders",      "fieldtype": "Table",    "label": "Work Orders",
+      "options": "Production Schedule Work Order"},
+    {"fieldname": "section_capacity", "fieldtype": "Section Break", "label": "Capacity Summary"},
+    {"fieldname": "total_machine_hours","fieldtype": "Float",  "label": "Total Machine Hours",  "read_only": 1},
+    {"fieldname": "col_break_3",      "fieldtype": "Column Break"},
+    {"fieldname": "total_labor_hours","fieldtype": "Float",    "label": "Total Labor Hours",    "read_only": 1},
+    {"fieldname": "bottleneck_detected","fieldtype": "Check",  "label": "Bottleneck Detected",  "read_only": 1},
+    {"fieldname": "section_notes",    "fieldtype": "Section Break", "label": "Notes"},
+    {"fieldname": "notes",            "fieldtype": "Text Editor","label": "Notes"}
+  ],
+  "permissions": [
+    {"role": "SM Admin",              "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1, "cancel": 1, "amend": 1},
+    {"role": "SM Production Manager", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1, "amend": 1},
+    {"role": "SM Planner",            "read": 1, "write": 1, "create": 1},
+    {"role": "SM Viewer",             "read": 1}
+  ]
+}

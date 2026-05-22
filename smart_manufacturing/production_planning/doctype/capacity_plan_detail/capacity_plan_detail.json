@@ -1,0 +1,13 @@
+{
+  "name": "Capacity Plan Detail",
+  "module": "Production Planning",
+  "doctype": "DocType",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "date",             "fieldtype": "Date",   "label": "Date",            "in_list_view": 1},
+    {"fieldname": "work_order",       "fieldtype": "Link",   "options": "Work Order",    "label": "Work Order",   "in_list_view": 1},
+    {"fieldname": "planned_hours",    "fieldtype": "Float",  "label": "Planned Hours",   "in_list_view": 1},
+    {"fieldname": "available_hours",  "fieldtype": "Float",  "label": "Available Hours", "in_list_view": 1},
+    {"fieldname": "overload",         "fieldtype": "Float",  "label": "Overload (hrs)",  "in_list_view": 1, "read_only": 1}
+  ]
+}
