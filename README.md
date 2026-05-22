@@ -1,4 +1,4 @@
-# Smart Manufacturing Suite
+# Smart Manufacturing
 
 **Production-ready Smart Manufacturing App for ERPNext/Frappe**
 
