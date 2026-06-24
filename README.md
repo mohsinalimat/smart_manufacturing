@@ -27,16 +27,10 @@ A scalable, modular, marketplace-ready Frappe application that extends ERPNext m
 
 ```bash
 cd /path/to/frappe-bench
-bench get-app https://github.com/Zaryab03/smart_manufacturing.git --skip-assets
-bench build --app smart_manufacturing
+bench get-app https://github.com/Zaryab03/smart_manufacturing.git
 bench --site your.site install-app smart_manufacturing
 bench --site your.site migrate
 ```
-
-> **Note:** Use `--skip-assets` with `get-app` and run `bench build --app smart_manufacturing`
-> as a separate step afterwards. Some bench versions build assets before the app is fully
-> registered in `sites/apps.txt`, which can fail with a `paths[0] argument must be of type
-> string. Received undefined` esbuild error. Running the build as its own command avoids it.
 
 ## Requirements
 
