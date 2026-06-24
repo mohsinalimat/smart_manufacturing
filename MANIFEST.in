@@ -1,2 +1,1 @@
-include requirements.txt
 recursive-include smart_manufacturing *.html *.js *.css *.json *.txt *.md *.svg *.png
